@@ -45,7 +45,6 @@ project (Postgres + Auth + Realtime, all protected by Row Level Security).
   <img src="docs/screenshots/hours-timer.png"     width="24%" alt="Live timer" />
   <img src="docs/screenshots/hours-timesheet.png" width="24%" alt="Timesheet" />
   <img src="docs/screenshots/hours-reports.png"   width="24%" alt="Earnings reports" />
-  <img src="docs/screenshots/profile.png"         width="24%" alt="Profile" />
 </p>
 
 ---
