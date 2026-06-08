@@ -55,10 +55,17 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         final session = ref.read(authRepositoryProvider).currentSession;
         if (session == null) {
           if (mounted) {
-            setState(() => _isSignUp = false);
+            // Drop back to the sign-in form with empty fields — don't leave the
+            // just-typed sign-up credentials pre-filled.
+            _name.clear();
+            _email.clear();
+            _password.clear();
+            setState(() {
+              _isSignUp = false;
+              _obscure = true;
+            });
             showSnack(context,
-                'Account created. Check your email to confirm, then sign in. '
-                '(Or disable "Confirm email" in Supabase.)');
+                'Account created. Check your email to confirm, then sign in.');
           }
         } else if (mounted) {
           showSnack(context, 'Account created. You are signed in.');
